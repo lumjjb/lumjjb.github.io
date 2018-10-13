@@ -5,10 +5,10 @@ markdown:         kramdown
 permalink:        pretty
 
 # Setup
-title:            Nabla Containers
-tagline:          'A new approach to Container Isolation'
-description:      'A new approach to Container Isolation'
-url:              https://nabla-containers.github.io
+title:            Brandon Lum
+tagline:          "A personal blog focused around security and computation"
+description:      "A personal blog focused around security and computation"
+url:              https://lumjjb.github.io
 baseurl:          /
 
 author:
@@ -18,7 +18,7 @@ author:
 # Custom vars
 version:          1.0.0
 github:
-  repo:           https://github.com/nabla-containers
+  repo:           https://github.com/lumjjb/lumjjb.github.io
 
 collections:
   authors:
