@@ -20,4 +20,6 @@ I've also have the privilege to be apart of more research driven agendas. These 
 
 I decided to restart my blog, as I had accumulated many interesting thoughts that I would like to share with others. In addition to that, I see myself solving some isolated problems that may not have an obvious google search answer, and that I want to make those solutions public.
 
+I've moved the blog from wordpress to jekyll for convenience of writing articles without having to deal with too much HTML, and easier management of articles.
+
 The topics in the blog will probably be more diverse in nature than previously, and I hope that you will enjoy the new articles!
