@@ -11,4 +11,4 @@ This blog is a collection of topics of my personal interests. Originally, the bl
 
 Enjoy the articles!
 
-[Brandon (More about me)]({{ '/authors/lumjjb.html' | relative_url }})
+[Brandon (More about me)]({{ '/authors/lumjjb' | relative_url }})
