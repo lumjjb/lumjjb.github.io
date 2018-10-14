@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Lumex Security: Innovative Security Insights"
+title: "Brandon Lum Personal Blog"
 ---
 
 ![Brandon Lum]({{ '/public/img/site-logo.png' | relative_url }})
