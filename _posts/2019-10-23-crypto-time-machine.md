@@ -1,39 +1,39 @@
-# Our secrets today, no longer tomorrow: a thought experiment in cryptography
+# Your secrets (best before 1/1/2025): a thought experiment on cryptography's expiration
 
 
 ![BrokenCrypto]({{ '/public/img/posts/2019-10-23-crypto-time-machine/lock-image.jpg' | relative_url }})
 
-Cryptography is a topic deeply rooted in mathematics, but because of its broad applications, it has an impact on each and every one of us today - be it sharing a cat photo on instagram, sending a private whatsapp/signal message to a friend, to the process of making a payment using your credit card. Cryptography, and more specifically encryption, helps provide confidentiality of our actions in the cyberspace - giving us peace of mind that someone isn't listening to our private
-conversations.
+Cryptography is a field with deep roots in mathematics. Yet, because of its broad applications, its reach extends into even the simplest activities of our daily lives - sharing a cat photo on instagram, sending a whatsapp/signal message to a friend, making a payment with your credit card. Cryptography, and more specifically encryption, protects the confidentiality of our actions in cyberspace - giving us the peace of mind that someone isn't listening in on our private conversations.
 
-In general, these schemes are built on top of what we believe are secure today. However, as history has shown us, what we deem secure today, may not be tomorrow. Perhaps our confidence in the privacy of our activities on the internet are influenced by confirmation bias. Through this article, we will explore a different perspective of how we view cryptography and privacy.
+In general, these schemes are built on top of what we believe is secure today. However, as history has shown, what we claim impregnable today may not be so tomorrow. Perhaps our confidence in web privacy has been influenced by confirmation bias. Through this article, we will explore a different perspective of how we view cryptography and privacy.
 
 ## Why does encryption work today?
 
-The premise of how encryption works is based on some mathematical problems being hard to solve. The most popular example of this is integer factorization:
+The premise of encryption is based on the idea that some mathematical problems are hard to solve. The most popular example of this is integer factorization:
 
-i.e. I know that the product of two numbers 151 * 251 = 37901. However, if I just provide the number 37901, finding out that the two factors of the number is generally hard. Of course, with cryptography, it usually is a much larger big number.
+i.e. I know that the product of two numbers 151 * 251 = 37901. However, if I provide just the final number 37901, finding out which two factors would have produced it is generally hard. Of course, with cryptography this is usually a much larger number.
 
-Because cryptography is based on something being hard to calculate, the security of a scheme is usually tied to computation power available. For example, in the case earlier where we had the number, 37901, a computer today would be able to try all possible factors of the number within seconds. However, a very large number (i.e. with 2000+ digits) would take multiple 100s of years by today's computer power [^1].
+Because cryptography is based on something being hard to calculate, the security of a scheme is usually tied to the computation power available. For example, in the earlier case where we had the number 37901, a computer today would be able to uncover all possible factors within seconds. However, a very large number (i.e. with >2000 digits) would take several hundreds of years with today's computing power [^1].
 
-Therefore, The ability to say that an encryption scheme X is secure is usually on the basis of:
-- Mathematics and crypto-analysis resaerch shows that problem X is hard to solve
-- Experts predict that given current trend of computational capabilities of the near future, X cannot be solved
+Therefore, the claim that an encryption scheme X is secure is usually made with these underlying assumptions:
+- Mathematics and crypto-analysis research show that problem X is hard to solve
+- Experts predict, given the current trend of computational capabilities, that X cannot be solved in the near future
+
 
 ## Crypto gets broken
 
-In general, the conclusions of the cryptographic community are sound, but like any other field, there are overlooked scenarios or external factors that influence the strength of an encryption scheme. This is especially critical in cryptography because security and privacy is affected. Two most common scenarios where crypto schemes weaken are when there are new developements in mathematics/overlooked mathematical assumptions or improvements in computational capabilities.
+In general, the conclusions of the cryptographic community are sound. However, like in any other field, there are exceptions. Maintaining a keen eye on them is especially critical in cryptography because security and privacy are at risk. Two most common scenarios where crypto schemes weaken are when there are new developments in mathematics (potentially from overlooked assumptions) or advancements in computational capabilities.
 
 ### Improvement in mathematics and crypto-analysis
 
-The first situation where crypto schemes degrade in security is from the progress of mathematics and/or crypto-analysis. These usually come in the form of new types of attacks on crypto schemes. These attacks usually take the form like the following:
-- If a key generated happens to meet certain properties, it is easily breakable.
-- There is a new attack which makes computation of breaking this scheme feasible, a larger key needs to be used
 
-A couple examples of these attacks are the [sweet32 attack of the 3DES encryption scheme](https://sweet32.info/), and the [Logjam attack on Diffie Helmman](https://en.wikipedia.org/wiki/Logjam_(computer_security)). These types of attacks usually affects the security of the crypto protocol leading to a need to change parts of the protocol, or tweak parameters used in the protocol (i.e. key length, prime sampling).
+Because crypto systems are based on the difficulty of particular math problems. It naturally follows that as scientists and mathematicians make progress in solving those math problems, the security of the crypto scheme gets weaker. This happens fairly often, but usually have a limited impact - i.e. only a very small number of users are affected or the security of the scheme becomes 10% less secure. A couple examples of these attacks are the [sweet32 attack of the 3DES encryption scheme](https://sweet32.info/), and the [Logjam attack on Diffie Helmman](https://en.wikipedia.org/wiki/Logjam_(computer_security)
 
-We note that these attacks are generally able to be resolved by making tweaks to the configuration of the crypto scheme. However, this is a major engineering and standards undertaking as it involves multiple systems interacting with each other. Therefore, some time may need to be taken to ensure that all systems are corrected. The result of this engineering complexity usually ends up in systems supporting interoperabibility with older insecure protocols for a significant amount of time. This need for backward compatibility also becomes
-susceptible to a recent class of downgrade attacks - basically a malicious system claims that it does not support a new standard of encryption, and asks the user to use the insecure version instead. Such examples are the recent [POODLE](https://en.wikipedia.org/wiki/POODLE) and [DROWN](https://en.wikipedia.org/wiki/DROWN) attacks.
+Fortunately, these types of attacks are usually easy technical fixes, usually by making minor tweaks to the crypto system (i.e. key length, prime sampling). However, the difficulty is not from the correction of the crypto scheme, but the adoption of the new scheme. This is due to the internet is made of thousands of systems, of which there are millions of components - each using the crypto scheme. Therefore, making these changes ends up being a major engineering and standards undertaking due to the need for adoption by systems across the board in order to be effective.
+
+Therefore, some time may need to be taken to ensure that all systems are corrected. The result of this engineering complexity usually ends up in systems supporting interoperability with older insecure protocols for a significant amount of time. While older or less accessible systems (i.e. satellites) need to be updated, components will still need to offer backward compatibility with the older less secure crypto schemes.
+
+There are a class of attacks which take advantage of this, called crypto downgrade attacks. Many of us may be familiar with this concept from how we manage our online accounts. We usually log into our online accounts with a username and password (at least). However, when we lose our password, we fall back to a more insecure way of proving our identity - i.e. a secret question or a password reset email link. These crypto downgrade attacks do something similar, by falsely advertising that a system does not support newer more secure crypto configurations, they force the use of insecure communication protocols. Some examples of this are the recent [POODLE](https://en.wikipedia.org/wiki/POODLE) and [DROWN](https://en.wikipedia.org/wiki/DROWN) attacks.
 
 ### Increase in computational capabilities
 
